@@ -6,7 +6,7 @@ import { DocumentService } from './document.service';
 describe('DocumentService', () => {
   let service: DocumentService;
   let httpMock: HttpTestingController;
-  const baseUrl = 'http://localhost:5048/api';
+  const baseUrl = 'https://ragsystem-nbanks.onrender.com/api';
 
   beforeEach(() => {
     TestBed.configureTestingModule({

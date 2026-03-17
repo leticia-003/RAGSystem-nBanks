@@ -7,7 +7,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 describe('UserService', () => {
   let service: UserService;
   let httpMock: HttpTestingController;
-  const apiUrl = 'http://localhost:5048/api/Users';
+  const apiUrl = 'https://ragsystem-nbanks.onrender.com/api/Users';
 
   beforeEach(() => {
     TestBed.configureTestingModule({

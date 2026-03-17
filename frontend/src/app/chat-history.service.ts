@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ChatHistoryService {
-  private baseUrl = 'http://localhost:5048/api';
+  private baseUrl = 'https://ragsystem-nbanks.onrender.com/api';
 
   constructor(private http: HttpClient) {}
 

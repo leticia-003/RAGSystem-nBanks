@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-  private apiUrl = 'http://localhost:5048/api/Users';
+  private apiUrl = 'https://ragsystem-nbanks.onrender.com/api/Users';
 
   constructor(private http: HttpClient) {}
 

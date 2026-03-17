@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class DocumentService {
-    private baseUrl = 'http://localhost:5048/api';
+    private baseUrl = 'https://ragsystem-nbanks.onrender.com/api';
 
     constructor(private http: HttpClient) {}
 
@@ -22,14 +22,14 @@ export class DocumentService {
 
   uploadFile(formData: FormData): Observable<{ id: string; fileName: string }> {
     return this.http.post<{ id: string; fileName: string }>(
-      'http://localhost:5048/api/Documents/upload',
+      'ragsystem-nbanks.onrender.com/api/Documents/upload',
       formData
     );
   }
   
   attachFileToChat(chatId: string, fileId: string): Observable<any> {
     return this.http.put(
-      'http://localhost:5048/api/ChatHistory/file',
+      'ragsystem-nbanks.onrender.com/api/ChatHistory/file',
       JSON.stringify(fileId),
       {
         params: { chatId },
@@ -39,7 +39,7 @@ export class DocumentService {
   }
   
   deleteFileByName(fileName: string) {
-    return this.http.delete<any>(`http://localhost:5048/api/Documents/delete`, {
+    return this.http.delete<any>(`ragsystem-nbanks.onrender.com/api/Documents/delete`, {
       params: { name: fileName }
     });
   }
