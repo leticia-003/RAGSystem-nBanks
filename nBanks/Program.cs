@@ -56,7 +56,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend",
         policy => policy
-            .WithOrigins("http://localhost:4200")
+            .WithOrigins(
+                "http://localhost:4200",
+                "https://ragsystem-nbanks-1.onrender.com"
+            )
             .AllowAnyHeader()
             .AllowAnyMethod());
 });
