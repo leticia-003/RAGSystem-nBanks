@@ -35,16 +35,11 @@ namespace nBanks.Controllers
             }
         }
 
-
         [HttpGet("user")]
         public async Task<IActionResult> GetByUser(string userId)
         {
             var res = await _chatHistoryService.GetAllChatHistories(userId);
-            if (res == null || res.Count == 0)
-            {
-                return NotFound(new { message = "No chat histories found for this user." });
-            }
-            return Ok(res);
+            return Ok(res ?? new List<ChatHistoryDTO>());
         }
 
         [HttpPut("update")]
